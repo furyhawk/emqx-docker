@@ -49,7 +49,20 @@ services:
     volumes:
       - vol-emqx-data2:/opt/emqx/data
 
+  mqttx-web:
+    image: emqx/mqttx-web:latest
+    container_name: mqttx_web
+    restart: unless-stopped
+    ports:
+      - 8888:80
+    networks:
+      - net
+      - emqx-bridge
+
 networks:
   emqx-bridge:
     driver: bridge
+  net:
+    external: true
+    name: ${NETWORK:-web}
 
