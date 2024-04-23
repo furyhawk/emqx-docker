@@ -1,6 +1,12 @@
+volumes:
+  vol-emqx-data1:
+    name: foo-emqx-data1
+  vol-emqx-data2:
+    name: foo-emqx-data2
+
 services:
   emqx1:
-    image: emqx:5.1.6
+    image: emqx:latest
     container_name: emqx1
     environment:
     - "EMQX_NODE_NAME=emqx@node1.emqx.io"
@@ -22,10 +28,10 @@ services:
       - 8883:8883
       - 18083:18083 
     volumes:
-      - "${PWD}/emqx1_data:/opt/emqx/data"
+      - vol-emqx-data1:/opt/emqx/data
 
   emqx2:
-    image: emqx:5.1.6
+    image: emqx:latest
     container_name: emqx2
     environment:
     - "EMQX_NODE_NAME=emqx@node2.emqx.io"
@@ -41,8 +47,9 @@ services:
         aliases:
         - node2.emqx.io
     volumes:
-      - "${PWD}/emqx2_data:/opt/emqx/data"
+      - vol-emqx-data2:/opt/emqx/data
 
 networks:
   emqx-bridge:
     driver: bridge
+
