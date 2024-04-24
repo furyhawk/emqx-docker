@@ -63,6 +63,7 @@ services:
 networks:
   emqx-bridge:
     driver: bridge
+    external: true
   net:
     external: true
     name: ${NETWORK:-web}
