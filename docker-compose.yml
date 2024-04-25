@@ -58,7 +58,6 @@ services:
       - 8888:80
     networks:
       - net
-      - emqx-bridge
 
 networks:
   emqx-bridge:
