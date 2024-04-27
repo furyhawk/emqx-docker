@@ -40,7 +40,7 @@ services:
     - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.emqx.io,emqx@node2.emqx.io]"
     healthcheck:
       test: ["CMD", "/opt/emqx/bin/emqx", "ctl", "status"]
-      interval: 5s
+      interval: 65s
       timeout: 25s
       retries: 5
     networks:
