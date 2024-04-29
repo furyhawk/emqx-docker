@@ -22,12 +22,12 @@ services:
       emqx-bridge:
         aliases:
         - node1.emqx.io
-    ports:
-      - 1883:1883
-      - 8083:8083
-      - 8084:8084
-      - 8883:8883
-      - 18083:18083
+    # ports:
+    #   - 1883:1883
+    #   - 8083:8083
+    #   - 8084:8084
+    #   - 8883:8883
+    #   - 18083:18083
     volumes:
       - vol-emqx-data1:/opt/emqx/data
 
@@ -54,8 +54,8 @@ services:
     image: emqx/mqttx-web:latest
     container_name: mqttx_web
     restart: unless-stopped
-    ports:
-      - 8888:80
+    # ports:
+    #   - 8888:80
     networks:
       - net
 
