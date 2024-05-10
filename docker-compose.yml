@@ -48,6 +48,7 @@ services:
         aliases:
         - node2.emqx.io
     volumes:
+      - net
       - vol-emqx-data2:/opt/emqx/data
 
   mqttx-web:
