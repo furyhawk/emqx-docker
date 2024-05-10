@@ -44,11 +44,11 @@ services:
       timeout: 25s
       retries: 5
     networks:
+      net:
       emqx-bridge:
         aliases:
         - node2.emqx.io
     volumes:
-      - net
       - vol-emqx-data2:/opt/emqx/data
 
   mqttx-web:
