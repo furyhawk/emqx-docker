@@ -1,8 +1,10 @@
 volumes:
   vol-emqx-data1:
     name: foo-emqx-data1
+    external: true
   vol-emqx-data2:
     name: foo-emqx-data2
+    external: true
 
 services:
   emqx1:
