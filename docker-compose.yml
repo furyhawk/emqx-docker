@@ -67,5 +67,5 @@ networks:
     driver: bridge
   net:
     external: true
-    name: ${NETWORK:-web}
+    name: ${NETWORK:-host}
 
